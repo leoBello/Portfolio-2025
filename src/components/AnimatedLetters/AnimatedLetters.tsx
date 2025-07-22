@@ -15,7 +15,6 @@ const AnimatedLetters: React.FC<AnimatedLettersProps> = ({
 
   useEffect(() => {
     const letters = containerRef.current?.querySelectorAll('span.letter');
-    console.log(letters); // ← Tous les <span> devraient s’afficher ici
     if (!letters) return;
 
     gsap.fromTo(
