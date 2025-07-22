@@ -39,7 +39,6 @@ const AnimatedLetters: React.FC<AnimatedLettersProps> = ({
           className='letter'
           key={i}
           style={{
-            display: 'inline-block',
             whiteSpace: char === ' ' ? 'pre' : 'normal',
           }}
         >

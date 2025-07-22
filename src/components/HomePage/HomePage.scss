@@ -20,8 +20,8 @@
   }
   .no-break-words {
     white-space: normal; /* autorise les retours à la ligne normaux */
-    overflow-wrap: normal; /* alias word-wrap, n’autorise pas la césure interne */
-    word-wrap: normal; /* alias historique pour overflow-wrap */
+    overflow-wrap: normal !important; /* alias word-wrap, n’autorise pas la césure interne */
+    word-wrap: normal !important; /* alias historique pour overflow-wrap */
     word-break: normal; /* ne casse les mots qu’aux points de césure normaux (espaces, tirets) */
     -webkit-hyphens: none; /* désactive la césure automatique WebKit */
     -ms-hyphens: none; /* désactive la césure automatique IE/Edge */
