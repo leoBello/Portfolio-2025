@@ -9,5 +9,7 @@
     // -webkit-background-clip: text;
     // color: transparent;
     // -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 }

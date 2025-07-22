@@ -21,6 +21,10 @@ body {
   min-height: 100vh;
 }
 
+body.fonts-loaded .hero-title {
+  opacity: 1;
+}
+
 button {
   cursor: pointer;
 }
