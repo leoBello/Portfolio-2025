@@ -2,7 +2,7 @@ import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const GRID_SIZE = 300; // Nombre de points sur chaque axe
+const GRID_SIZE = 250; // Nombre de points sur chaque axe
 const GRID_DIST = 0.5; // Espacement des points
 
 // Composant qui dessine et anime la grille de points
