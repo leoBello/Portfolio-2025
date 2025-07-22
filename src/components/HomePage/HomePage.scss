@@ -20,6 +20,9 @@
       font-size: 40px;
       font-weight: 150;
     }
+    @media only screen and (max-width: 480px) {
+      font-size: 9vw; /* Ou 32px à 40px max */
+    }
   }
   .no-break-words {
     white-space: normal; /* autorise les retours à la ligne normaux */
@@ -36,6 +39,7 @@
     font-display: swap;
     opacity: 0;
     transition: opacity 0.3s ease;
+    text-align: center;
     // color: rgba(255, 255, 255, 0.87);
 
     // word-break: break-word; // casse les mots si trop longs
