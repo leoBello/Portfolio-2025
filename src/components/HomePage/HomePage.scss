@@ -45,7 +45,7 @@
     // word-break: break-word; // casse les mots si trop longs
     // overflow-wrap: break-word; // autorise la césure à l'intérieur
     word-break: normal;
-    overflow-wrap: normal;
+    overflow-wrap: anywhere;
 
     max-width: 100vw !important;
     white-space: normal !important;
