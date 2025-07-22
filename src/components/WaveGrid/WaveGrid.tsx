@@ -1,74 +1,88 @@
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
+import { LineSegments } from 'three';
 
-const GRID_SIZE = 250; // Nombre de points sur chaque axe
-const GRID_DIST = 0.5; // Espacement des points
+const GRID_SIZE = 120;
+const GRID_DIST = 1;
 
-// Composant qui dessine et anime la grille de points
-function WaveGrid() {
-  const mesh = useRef<THREE.Points>(null);
+function GridLines() {
+  const mesh = useRef<LineSegments>(null);
 
-  // Construction initiale des positions de la grille
+  // Construction des segments de la grille : lignes horizontales et verticales
   const positions = useMemo(() => {
     const arr = [];
-    for (let x = 0; x < GRID_SIZE; x++) {
-      for (let y = 0; y < GRID_SIZE; y++) {
+    // Lignes horizontales
+    for (let y = 0; y < GRID_SIZE; y++) {
+      for (let x = 0; x < GRID_SIZE - 1; x++) {
         arr.push(
-          (x - GRID_SIZE / 2) * GRID_DIST, // X
-          (y - GRID_SIZE / 2) * GRID_DIST, // Y
-          0 // Z (sera animé)
+          (x - GRID_SIZE / 2) * GRID_DIST,
+          (y - GRID_SIZE / 2) * GRID_DIST,
+          0,
+          (x + 1 - GRID_SIZE / 2) * GRID_DIST,
+          (y - GRID_SIZE / 2) * GRID_DIST,
+          0
+        );
+      }
+    }
+    // Lignes verticales
+    for (let x = 0; x < GRID_SIZE; x++) {
+      for (let y = 0; y < GRID_SIZE - 1; y++) {
+        arr.push(
+          (x - GRID_SIZE / 2) * GRID_DIST,
+          (y - GRID_SIZE / 2) * GRID_DIST,
+          0,
+          (x - GRID_SIZE / 2) * GRID_DIST,
+          (y + 1 - GRID_SIZE / 2) * GRID_DIST,
+          0
         );
       }
     }
     return new Float32Array(arr);
   }, []);
 
-  // Animation "onde" sur Z (vague)
+  // Animation des ondes sur Z
   useFrame(({ clock }) => {
     if (!mesh.current) return;
     const pos = mesh.current.geometry.attributes.position;
-    for (let i = 0; i < pos.count; i++) {
-      const x = pos.getX(i);
-      const y = pos.getY(i);
-      // Calcul d'une vague sinusoïdale
-      const z =
-        Math.sin((x + clock.elapsedTime) * 1.5) +
-        Math.cos((y + clock.elapsedTime) * 1.5);
-      pos.setZ(i, z * 0.4); // Amplitude de la vague
+    for (let i = 0; i < pos.count; i += 2) {
+      for (let j = 0; j < 2; j++) {
+        const x = pos.getX(i + j);
+        const y = pos.getY(i + j);
+        const z =
+          Math.sin((x + clock.elapsedTime) * 1.5) +
+          Math.cos((y + clock.elapsedTime) * 1.5);
+        pos.setZ(i + j, z * 0.4);
+      }
     }
     pos.needsUpdate = true;
   });
 
   return (
-    <points ref={mesh}>
+    <lineSegments ref={mesh}>
       <bufferGeometry>
-        <bufferAttribute
-          attach='attributes-position'
-          args={[positions, 3]} // 3 = itemSize (x, y, z)
-        />
+        <bufferAttribute attach='attributes-position' args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color='#53A1FF' size={0.16} />
-    </points>
+      <lineBasicMaterial color='#53A1FF' />
+    </lineSegments>
   );
 }
 
-// Intégration dans l’application
-export default function WaveGridDemo() {
+export default function GridLinesDemo() {
   return (
     <Canvas
       camera={{ position: [0, -15, 20], fov: 60 }}
+      // camera={{ position: [0, -28, 12], fov: 50 }} // plus rasant
       style={{
-        position: 'fixed', // ou 'absolute', selon le cas
+        position: 'fixed',
         top: 0,
         left: 0,
         width: '100vw',
         height: '100vh',
-        zIndex: -1, // envoie en arrière-plan si besoin, au-dessus du body
+        zIndex: -1,
       }}
     >
       <ambientLight intensity={0.5} />
-      <WaveGrid />
+      <GridLines />
     </Canvas>
   );
 }
