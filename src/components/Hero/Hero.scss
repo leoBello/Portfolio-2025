@@ -1,0 +1,94 @@
+.hero-container {
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  .hero-title {
+    width: fit-content;
+    font-family: 'Josefin Sans', sans-serif;
+
+    font-display: swap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+
+    word-break: normal;
+    overflow-wrap: anywhere;
+
+    max-width: 100vw !important;
+    white-space: normal !important;
+    overflow-x: hidden;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+  .title-pt-1 {
+    color: #ffffff;
+    font-size: 90px;
+    font-weight: 700;
+
+    /* Tablettes grandes (entre 992px et 1199px) */
+    @media only screen and (max-width: 1199px) and (min-width: 992px) {
+      font-size: 70px;
+    }
+
+    /* Tablettes petites / grands mobiles (entre 768px et 991px) */
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+      font-size: 55px;
+    }
+
+    /* Mobiles moyens (entre 480px et 767px) */
+    @media only screen and (max-width: 767px) and (min-width: 480px) {
+      font-size: 40px;
+    }
+
+    /* Mobiles petits (moins de 479px) */
+    @media only screen and (max-width: 479px) {
+      font-size: 30px;
+    }
+  }
+
+  .title-pt-2 {
+    font-size: 66px;
+    font-weight: 600;
+
+    /* Tablettes grandes (entre 992px et 1199px) */
+    @media only screen and (max-width: 1199px) and (min-width: 992px) {
+      font-size: 52px;
+    }
+
+    /* Tablettes petites / grands mobiles (entre 768px et 991px) */
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+      font-size: 40px;
+    }
+
+    /* Mobiles moyens (entre 480px et 767px) */
+    @media only screen and (max-width: 767px) and (min-width: 480px) {
+      font-size: 30px;
+    }
+
+    /* Mobiles petits (moins de 479px) */
+    @media only screen and (max-width: 479px) {
+      font-size: 22px;
+    }
+
+    // background: linear-gradient(90deg, #dd00d3, #0bfffe);
+    background: linear-gradient(90deg, #0bfffe, #dd00d3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gravity-slider {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+  }
+}
