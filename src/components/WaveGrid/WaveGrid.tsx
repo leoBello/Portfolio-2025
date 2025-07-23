@@ -1,19 +1,21 @@
-import { useRef, useMemo, useState, useEffect } from 'react';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { LineSegments, Vector3, Raycaster, Plane, Vector2 } from 'three';
+
+interface WaveGridProps {
+  gravity: number;
+}
 
 // Taille de la grille (nombre de lignes/colonnes)
 const GRID_SIZE = 120;
 // Espacement entre les points de la grille
 const GRID_DIST = 1;
-// Amplitude de la déformation verticale au hover (profondeur du "puits")
-const GRAVITY = -25;
 
 // Props du composant GridLines : coordonnées du hover ou null
-type GridLinesProps = { hover: [number, number] | null };
+type GridLinesProps = { hover: [number, number] | null; gravity: number };
 
 // Composant qui dessine et anime la grille avec effet de puits localisé
-const GridLines: React.FC<GridLinesProps> = ({ hover }) => {
+const GridLines: React.FC<GridLinesProps> = ({ hover, gravity }) => {
   // Ref sur l'objet Three.js manipulé pour accéder directement à la géométrie
   const mesh = useRef<LineSegments>(null);
 
@@ -74,7 +76,7 @@ const GridLines: React.FC<GridLinesProps> = ({ hover }) => {
           const dy = y - hover[1];
           const distSq = dx * dx + dy * dy;
           // Profil en cloche gaussienne : effet maximal au centre, qui décroit rapidement
-          deformZ = GRAVITY * Math.exp(-distSq / (2 * 12 * 12));
+          deformZ = gravity * Math.exp(-distSq / (2 * 12 * 12));
         }
 
         // Application de la hauteur finale : onde globale + éventuelle déformation locale
@@ -145,7 +147,7 @@ const MouseTracker: React.FC<{
 };
 
 // Composant principal qui intègre la scène Canvas, la lumière et la grille interactive
-const GridLinesDemo: React.FC = () => {
+const WaveGrid: React.FC<WaveGridProps> = ({ gravity }) => {
   // État : coordonnées courantes du hover souris dans la scène, ou null
   const [hover, setHover] = useState<[number, number] | null>(null);
 
@@ -166,9 +168,9 @@ const GridLinesDemo: React.FC = () => {
       {/* Composant utilitaire pour suivre le hover souris */}
       <MouseTracker setHover={setHover} />
       {/* Grille animée avec l'effet de puits interactif */}
-      <GridLines hover={hover} />
+      <GridLines hover={hover} gravity={gravity} />
     </Canvas>
   );
 };
 
-export default GridLinesDemo;
+export default WaveGrid;

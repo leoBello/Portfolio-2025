@@ -2,6 +2,7 @@
   box-sizing: border-box;
   max-width: 100vw;
   overflow-x: hidden;
+
   h1 {
     font-size: 100px;
     font-weight: 400;
@@ -59,5 +60,12 @@
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+  }
+
+  .gravity-slider {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
   }
 }

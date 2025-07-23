@@ -1,0 +1,25 @@
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 300px;
+  background-color: rgb(18, 18, 18, 0.7);
+  padding: 10px 10px;
+  border-radius: 20px;
+}
+
+.slider-label {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.slider-value {
+  color: #1976d2;
+  margin-left: 0.5rem;
+}
+
+.slider-input {
+  accent-color: #1976d2;
+  width: 100%;
+  cursor: pointer;
+}

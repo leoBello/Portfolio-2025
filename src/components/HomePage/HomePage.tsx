@@ -1,15 +1,26 @@
+import { useState } from 'react';
 import './HomePage.scss';
 import AnimatedLetters from '../AnimatedLetters/AnimatedLetters';
-import WaveGridDemo from '../WaveGrid/WaveGrid';
+import WaveGrid from '../WaveGrid/WaveGrid';
+import Slider from '../Silder/Slider';
 
 const HomePage = () => {
+  const [gravity, setGravity] = useState(-25);
   return (
     <div className='home-page-container'>
+      <Slider
+        value={gravity}
+        min={-50}
+        max={50}
+        onChange={(value) => setGravity(value)}
+        label='Gravité'
+        className='gravity-slider'
+      />
       <AnimatedLetters
         className='hero-title no-break-words'
         text='This website is coming soon'
       />
-      <WaveGridDemo />
+      <WaveGrid gravity={gravity} />
     </div>
   );
 };
