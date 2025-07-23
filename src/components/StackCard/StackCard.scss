@@ -1,0 +1,49 @@
+.stack-card {
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  background-color: #121212;
+  border-radius: 10px;
+
+  .stack-card-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .stack-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .stack-card-list {
+      padding-left: 20px;
+
+      .stack-card-list-item {
+        padding-bottom: 10px;
+      }
+
+      .list-title {
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+
+      .list-desc {
+        display: block;
+        padding-top: 5px;
+        font-size: 0.875rem;
+        color: #b0b0b0;
+        opacity: 0.85;
+      }
+      // Ajouter une puce personnalisée
+      //   &::before {
+      //     content: '•';
+      //     position: absolute;
+      //     left: 0;
+      //     top: 0;
+      //     color: #0bfffe;
+      //     font-weight: bold;
+      //   }
+    }
+  }
+}

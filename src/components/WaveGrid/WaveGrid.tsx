@@ -161,6 +161,7 @@ const WaveGrid: React.FC<WaveGridProps> = ({ gravity }) => {
         width: '100vw',
         height: '100vh',
         zIndex: 0,
+        display: 'block', // à voir l'utilité
       }}
     >
       {/* Lumière d'ambiance douce pour éclairer la scène */}

@@ -2,9 +2,9 @@
   box-sizing: border-box;
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
 
-  h1 {
-  }
   .no-break-words {
     white-space: normal; /* autorise les retours à la ligne normaux */
     overflow-wrap: normal !important; /* alias word-wrap, n’autorise pas la césure interne */
@@ -13,5 +13,11 @@
     -webkit-hyphens: none; /* désactive la césure automatique WebKit */
     -ms-hyphens: none; /* désactive la césure automatique IE/Edge */
     hyphens: none; /* désactive la césure automatique standard */
+  }
+  .gravity-slider {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
   }
 }

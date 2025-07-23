@@ -1,0 +1,11 @@
+.skils-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  height: fit-content !important;
+  padding-bottom: 30px;
+  pointer-events: none;
+  justify-content: space-evenly;
+}
