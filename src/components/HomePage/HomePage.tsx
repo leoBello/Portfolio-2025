@@ -14,8 +14,8 @@ const HomePage = () => {
       {isDesktop && (
         <Slider
           value={gravity}
-          min={-50}
-          max={50}
+          min={-75}
+          max={75}
           onChange={(value) => setGravity(value)}
           label='Gravity'
           className='gravity-slider'

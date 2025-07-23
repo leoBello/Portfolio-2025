@@ -126,7 +126,7 @@ const Skills = () => {
           listItems={[
             {
               title: 'Frontend',
-              description: 'React, Typescript, Javascript, Sass, Three.js',
+              description: 'React, Typescript, Javascript, Gsap, Three.js',
             },
             { title: 'Backend', description: 'Node.js, MongoDB, PostgreSQL' },
             { title: 'CMS', description: 'Wordpress' },
