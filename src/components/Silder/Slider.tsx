@@ -8,6 +8,7 @@ type SliderProps = {
   label: string;
   onChange: (value: number) => void;
   className?: string;
+  withBackground?: boolean;
 };
 
 const Slider: React.FC<SliderProps> = ({
@@ -16,6 +17,7 @@ const Slider: React.FC<SliderProps> = ({
   value,
   label,
   onChange,
+  withBackground = false,
   className = '',
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +26,11 @@ const Slider: React.FC<SliderProps> = ({
   };
 
   return (
-    <div className={`slider-container ${className}`}>
+    <div
+      className={`slider-container ${className} ${
+        withBackground ? 'with-background' : ''
+      }`}
+    >
       <label className='slider-label'>
         {label} : <span className='slider-value'>{value}</span>
       </label>

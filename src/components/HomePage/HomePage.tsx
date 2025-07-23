@@ -15,6 +15,7 @@ const HomePage = () => {
         onChange={(value) => setGravity(value)}
         label='Gravité'
         className='gravity-slider'
+        withBackground
       />
       <AnimatedLetters
         className='hero-title no-break-words'
