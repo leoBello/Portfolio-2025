@@ -15,7 +15,7 @@ const Hero = () => {
           min={-50}
           max={50}
           onChange={(value) => setGravity(value)}
-          label='Gravité'
+          label='Gravity'
           className='gravity-slider'
           withBackground
         />
