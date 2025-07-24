@@ -81,6 +81,26 @@
     font-size: 16px;
     opacity: 1;
   }
+
+  /* gestion des champs pré-remplis */
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:hover,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:focus,
+  textarea:-webkit-autofill:hover {
+    /* Fond identique à la version custom */
+    background-color: rgba(255, 255, 255, 0.121) !important;
+    /* "Désactive" le fond du navigateur avec un énorme box-shadow */
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.121) inset !important;
+    /* Texte en blanc comme à la main */
+    -webkit-text-fill-color: #fff !important;
+    /* Police custom identique à la main */
+    font-family: 'Josefin Sans', sans-serif !important;
+    /* Bordure, radius, etc. peuvent être forcés ici */
+    border-radius: 6px !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
 
 .glass {
