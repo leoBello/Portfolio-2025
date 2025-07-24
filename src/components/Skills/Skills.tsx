@@ -16,6 +16,7 @@ const Skills = () => {
 
   useEffect(() => {
     // Animation carte 1 : Arrive du haut gauche avec rotation
+
     gsap.fromTo(
       card1.current,
       {
@@ -43,13 +44,13 @@ const Skills = () => {
         },
       }
     );
-
+    const fromY = -window.innerHeight; // ou -0.9 * window.innerHeight
     // Animation carte 2
     gsap.fromTo(
       card2.current,
       {
         x: 100,
-        y: -1000,
+        y: fromY,
         rotateX: 360,
         rotateY: 360,
         rotateZ: 360,
@@ -69,7 +70,6 @@ const Skills = () => {
           start: 'top 80%',
           end: 'top 50%',
           scrub: true,
-          markers: true,
         },
       }
     );
