@@ -3,7 +3,7 @@
   cursor: pointer;
   padding: 10px 20px;
   color: rgb(255, 255, 255);
-  border-radius: 15px;
+  border-radius: 5px;
   transition: filter 0.2s;
   &:hover {
     filter: brightness(0.6);
@@ -15,4 +15,5 @@
   width: 100px;
   background-color: transparent;
   background: linear-gradient(90deg, #0bfffe, #dd00d3) !important;
+  font-weight: bold;
 }

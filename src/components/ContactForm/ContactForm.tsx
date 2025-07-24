@@ -105,7 +105,7 @@ const ContactForm: React.FC = () => {
             <textarea
               className='text-area'
               {...register('message', { required: 'Message obligatoire' })}
-              placeholder='Votre message'
+              placeholder='Your request here'
               rows={5}
             />
           </div>
