@@ -49,7 +49,7 @@ const Skills = () => {
       card2.current,
       {
         x: 100,
-        y: -1000,
+        y: -300,
         rotateX: 360,
         rotateY: 360,
         rotateZ: 360,
