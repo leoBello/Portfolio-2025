@@ -26,4 +26,8 @@ body.fonts-loaded .hero-title {
 
 button {
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none; /* Pour Safari/anciens Chrome */
+  -moz-user-select: none; /* Pour Firefox */
+  -ms-user-select: none; /* Pour Internet Explorer/Edge Legacy */
 }
