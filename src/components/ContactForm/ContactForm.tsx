@@ -61,29 +61,33 @@ const ContactForm: React.FC = () => {
       <form className='form' onSubmit={handleSubmit(onSubmit, onError)}>
         <div className='form-group'>
           <label htmlFor='name'>Name</label>
-          <input
-            id='name'
-            type='text'
-            className='form-input'
-            {...register('name', { required: 'Nom obligatoire' })}
-            placeholder='Name'
-          />
+          <div className='input-gradient-border'>
+            <input
+              id='name'
+              type='text'
+              className='form-input'
+              {...register('name', { required: 'Nom obligatoire' })}
+              placeholder='Name'
+            />
+          </div>
         </div>
         <div className='form-group'>
           <label htmlFor='email'>Email</label>
-          <input
-            id='email'
-            type='email'
-            className='form-input'
-            {...register('email', {
-              required: 'Email obligatoire',
-              pattern: {
-                value: EMAIL_PATTERN,
-                message: "Format de l'email incorrect",
-              },
-            })}
-            placeholder='Email'
-          />
+          <div className='input-gradient-border'>
+            <input
+              id='email'
+              type='email'
+              className='form-input'
+              {...register('email', {
+                required: 'Email obligatoire',
+                pattern: {
+                  value: EMAIL_PATTERN,
+                  message: "Format de l'email incorrect",
+                },
+              })}
+              placeholder='Email'
+            />
+          </div>
         </div>
         {/* <div className='form-group'>
           <label htmlFor='subject'>Subject</label>
@@ -97,12 +101,14 @@ const ContactForm: React.FC = () => {
         </div> */}
         <div className='form-group'>
           <label>Message</label>
-          <textarea
-            className='text-area'
-            {...register('message', { required: 'Message obligatoire' })}
-            placeholder='Votre message'
-            rows={5}
-          />
+          <div className='input-gradient-border'>
+            <textarea
+              className='text-area'
+              {...register('message', { required: 'Message obligatoire' })}
+              placeholder='Votre message'
+              rows={5}
+            />
+          </div>
         </div>
         <GenericButton
           handleClick={() => {}}
