@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { useForm, type FieldErrors } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import emailjs from '@emailjs/browser';
 import './ContactForm.scss';
 import GenericButton from '../GenericButton/GenericButton';
 
 interface ContactFormInputs {
   name: string;
   email: string;
-  subject: string;
   message: string;
 }
 
@@ -19,7 +19,16 @@ const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   const onSubmit = (data: ContactFormInputs) => {
-    console.log('Formulaire soumis :', data);
+    emailjs.send(
+      'service_py1mwbw',
+      'template_d68w92c',
+      {
+        name: data.name,
+        message: data.message,
+        email: data.email,
+      },
+      'Nwg9_jvRP92gHnwV_'
+    );
     toast.success('Message envoyé !');
     reset();
   };
