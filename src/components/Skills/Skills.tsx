@@ -44,13 +44,13 @@ const Skills = () => {
         },
       }
     );
-    const fromY = -window.innerHeight; // ou -0.9 * window.innerHeight
+    // const fromY = -window.innerHeight; // ou -0.9 * window.innerHeight
     // Animation carte 2
     gsap.fromTo(
       card2.current,
       {
         x: 100,
-        y: fromY,
+        y: '-90vh',
         rotateX: 360,
         rotateY: 360,
         rotateZ: 360,
