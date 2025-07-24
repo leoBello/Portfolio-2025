@@ -69,6 +69,7 @@ const Skills = () => {
           start: 'top 80%',
           end: 'top 50%',
           scrub: true,
+          markers: true,
         },
       }
     );
