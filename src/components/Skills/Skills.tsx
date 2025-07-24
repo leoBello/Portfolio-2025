@@ -16,6 +16,8 @@ const Skills = () => {
 
   useEffect(() => {
     // Animation carte 1 : Arrive du haut gauche avec rotation
+    console.log('CARDS', card1.current, card2.current, card3.current);
+
     setTimeout(() => {
       gsap.fromTo(
         card1.current,
