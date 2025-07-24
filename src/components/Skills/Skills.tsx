@@ -111,8 +111,8 @@ const Skills = () => {
           title='What I can do'
           description='I can help develop solutions that will help you grow your business :'
           listItems={[
-            { title: 'UI/UX Design' },
             { title: 'Fullstack Web Development' },
+            { title: 'UI/UX Design' },
             { title: 'Database Design' },
             { title: 'API Integration' },
           ]}

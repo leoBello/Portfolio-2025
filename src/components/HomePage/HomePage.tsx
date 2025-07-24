@@ -5,6 +5,7 @@ import Skills from '../Skills/Skills';
 import WaveGrid from '../WaveGrid/WaveGrid';
 import Slider from '../Silder/Slider';
 import { isDesktop } from 'react-device-detect';
+import ContactContainer from '../ContactContainer/ContactContainer';
 
 const HomePage = () => {
   const [gravity, setGravity] = useState(-25);
@@ -24,6 +25,7 @@ const HomePage = () => {
       )}
       <Hero />
       <Skills />
+      <ContactContainer />
     </div>
   );
 };

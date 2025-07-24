@@ -1,0 +1,9 @@
+.contact-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
