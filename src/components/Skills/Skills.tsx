@@ -39,18 +39,12 @@ const Skills = () => {
         scrollTrigger: {
           trigger: card1.current,
           start: 'top 80%',
-          end: 'top 50%', // Ajuste le end pour gérer la "durée" du scroll d'animation
-          scrub: true, // <-- clé ici !
+          end: 'top 20%', // Ajuste le end pour gérer la "durée" du scroll d'animation
+          scrub: true, // Suivre le scroll
         },
       }
     );
-    // const fromY = card2.current
-    //   ? -window.innerHeight + card2.current.getBoundingClientRect().height / 2
-    //   : -440;
 
-    // console.log('fromY: ' + fromY);
-
-    // Animation carte 2
     if (!card2.current) return;
     gsap.fromTo(
       card2.current,
@@ -73,11 +67,11 @@ const Skills = () => {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: card2.current,
-          start: 'top 80%',
-          end: 'top 50%',
+          start: 'top 100%',
+          end: 'top 20%',
           scrub: true,
         },
-        immediateRender: false,
+        immediateRender: false, // solution pour fix l'animation en production
       }
     );
 
@@ -104,7 +98,7 @@ const Skills = () => {
         scrollTrigger: {
           trigger: card3.current,
           start: 'top 80%',
-          end: 'top 50%',
+          end: 'top 20%',
           scrub: true,
         },
       }
