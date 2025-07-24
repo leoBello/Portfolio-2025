@@ -44,18 +44,18 @@ const Skills = () => {
         },
       }
     );
-    const fromY = card2.current
-      ? -window.innerHeight + card2.current.getBoundingClientRect().height / 2
-      : -440;
+    // const fromY = card2.current
+    //   ? -window.innerHeight + card2.current.getBoundingClientRect().height / 2
+    //   : -440;
 
-    console.log('fromY: ' + fromY);
+    // console.log('fromY: ' + fromY);
 
     // Animation carte 2
     gsap.fromTo(
       card2.current,
       {
         x: 100,
-        y: fromY,
+        y: -200,
         rotateX: 360,
         rotateY: 360,
         rotateZ: 360,
