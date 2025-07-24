@@ -29,8 +29,7 @@
       background: transparent;
       &:hover {
         filter: brightness(1.5) !important;
-        box-shadow: 0 0 10px #dd00d3; /* (optionnel) effet lumineux externe */
-        // box-shadow: linear-gradient(90deg, #0bfffe, #dd00d3) !important;
+        box-shadow: 0 0 10px #dd00d3;
       }
     }
   }

@@ -1,0 +1,19 @@
+.mail {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: fit-content;
+  pointer-events: all;
+
+  &:hover {
+    filter: brightness(1.5) !important;
+    box-shadow: 0 0 10px #dd00d3;
+  }
+
+  .copy-icon {
+    height: 24px;
+    width: 24px;
+  }
+}
