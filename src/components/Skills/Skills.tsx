@@ -10,9 +10,9 @@ import './Skills.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
-  const card1 = useRef(null);
-  const card2 = useRef(null);
-  const card3 = useRef(null);
+  const card1 = useRef<HTMLDivElement | null>(null);
+  const card2 = useRef<HTMLDivElement | null>(null);
+  const card3 = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // Animation carte 1 : Arrive du haut gauche avec rotation
@@ -44,13 +44,16 @@ const Skills = () => {
         },
       }
     );
-    // const fromY = -window.innerHeight; // ou -0.9 * window.innerHeight
+    const fromY = card2.current
+      ? -window.innerHeight + card2.current.getBoundingClientRect().height / 2
+      : -150;
+
     // Animation carte 2
     gsap.fromTo(
       card2.current,
       {
         x: 100,
-        y: -100,
+        y: fromY,
         rotateX: 360,
         rotateY: 360,
         rotateZ: 360,
