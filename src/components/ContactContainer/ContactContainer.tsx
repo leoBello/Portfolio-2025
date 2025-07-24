@@ -12,7 +12,8 @@ const ContactContainer = () => {
       <div className='form-text-container'>
         <h2>{`Let's make your projects a reality`}</h2>
         <p>{`Ready to bring your project to life with expert hands and a good dose of creativity? `}</p>
-        <p>{`I’ll handle the hard work—you just take the credit! Let’s make your project shine (and don’t worry, developer jokes are included for free)`}</p>
+        <p>{`I’ll handle the hard work—you just take the credit !`}</p>
+        <p>{`Let’s make your project shine (and don’t worry, developer jokes are included for free)`}</p>
         <div className='icon-label'>
           <img className='icon-label-icon' src={phoneIcon} alt='Phone icon' />
           <p>{`+33 6 59 08 61 83`}</p>
