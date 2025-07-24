@@ -119,7 +119,7 @@ const Skills = () => {
           ]}
         />
       </div>
-      <div ref={card2} style={{ minHeight: 440, background: '#ffc' }}>
+      <div ref={card2}>
         <StackCard
           icon={stack}
           title='Tools I use'
