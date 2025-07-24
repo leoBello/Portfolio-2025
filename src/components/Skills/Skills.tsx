@@ -51,11 +51,12 @@ const Skills = () => {
     // console.log('fromY: ' + fromY);
 
     // Animation carte 2
+    if (!card2.current) return;
     gsap.fromTo(
       card2.current,
       {
         x: 100,
-        y: -350,
+        y: -1000,
         rotateX: 360,
         rotateY: 360,
         rotateZ: 360,
@@ -76,6 +77,7 @@ const Skills = () => {
           end: 'top 50%',
           scrub: true,
         },
+        immediateRender: false,
       }
     );
 
