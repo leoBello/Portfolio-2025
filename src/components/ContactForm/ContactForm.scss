@@ -1,14 +1,16 @@
 .contact-form-container {
   display: flex;
   border-radius: 15px;
-  width: 500px;
+  min-width: 450px;
   height: fit-content;
   padding: 30px;
-  margin-bottom: 90px;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   pointer-events: all;
+  @media only screen and (max-width: 1060px) and (min-width: 768px) {
+    margin-bottom: 90px;
+  }
 }
 
 .form {
@@ -26,7 +28,6 @@
   .input-gradient-border {
     position: relative;
     border-radius: 6px;
-    // Bordure gradient :
     &::before {
       content: '';
       position: absolute;
