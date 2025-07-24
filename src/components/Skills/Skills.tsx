@@ -48,11 +48,11 @@ const Skills = () => {
     gsap.fromTo(
       card2.current,
       {
-        x: 100,
-        y: -1000,
-        rotateX: 360,
-        rotateY: 360,
-        rotateZ: 360,
+        x: -100,
+        y: -100,
+        rotateX: 45,
+        rotateY: -20,
+        rotateZ: 20,
         opacity: 0,
       },
       {
@@ -65,11 +65,10 @@ const Skills = () => {
         duration: 1,
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: card2.current,
+          trigger: card1.current,
           start: 'top 80%',
-          end: 'top 50%',
-          scrub: true,
-          markers: true,
+          end: 'top 50%', // Ajuste le end pour gérer la "durée" du scroll d'animation
+          scrub: true, // <-- clé ici !
         },
       }
     );
