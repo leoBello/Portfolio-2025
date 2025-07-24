@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import StackCard from '../StackCard/StackCard';
 import computer from '../../assets/computer.png';
-import stack from '../../assets/stack.png';
+// import stack from '../../assets/stack.png';
 import paint from '../../assets/paint.png';
 import './Skills.scss';
 
@@ -120,7 +120,7 @@ const Skills = () => {
         />
       </div>
       <div ref={card2}>
-        <StackCard
+        {/* <StackCard
           icon={stack}
           title='Tools I use'
           description='I use the latest tools and technologies to build functional and scalable products :'
@@ -132,7 +132,8 @@ const Skills = () => {
             { title: 'Backend', description: 'Node.js, MongoDB, PostgreSQL' },
             { title: 'CMS', description: 'Wordpress' },
           ]}
-        />
+        /> */}
+        <p>ICI du text</p>
       </div>
       <div ref={card3}>
         <StackCard
