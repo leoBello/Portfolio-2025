@@ -24,17 +24,29 @@
   .text-area {
     font-family: 'Josefin Sans', sans-serif;
     color: rgba(255, 255, 255, 0.507);
-
-    padding: 15px 15px;
-    background-color: transparent;
+    // min-height: 50px;
+    padding: 12px 15px; /* plus raisonnable */
+    line-height: 1.5; /* assure l’espace vertical correct */
+    font-size: 16px; /* explicite (ou ajuste selon besoins), parfois Josefin Sans est plus petit visuellement */
+    background-color: rgba(255, 255, 255, 0.121);
     border: none;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.121);
-    backdrop-filter: blur(2px); /* Effet de flou */
-    -webkit-backdrop-filter: blur(2px); /* Pour compatibilité Safari */
+    background-clip: padding-box;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transition: border-image 0.3s;
+
     &::placeholder {
-      padding: 5px 10px;
+      // padding: 5px 10px;
       color: rgba(255, 255, 255, 0.507);
+    }
+
+    &:focus {
+      border: 1px solid transparent;
+      outline: none; /* désactive la "seconde" bordure du navigateur */
+      border-image: linear-gradient(90deg, #0bfffe, #dd00d3) 1;
+      border-radius: 5px;
+      box-shadow: none; /* ou alors une ombre voulue uniquement ! */
     }
   }
   input:focus,
