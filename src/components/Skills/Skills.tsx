@@ -2,41 +2,116 @@ import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import StackCard from '../StackCard/StackCard';
-// import computer from '../../assets/computer.png';
+import computer from '../../assets/computer.png';
 import stack from '../../assets/stack.png';
-// import paint from '../../assets/paint.png';
+import paint from '../../assets/paint.png';
 import './Skills.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
-  // const card1 = useRef(null);
+  const card1 = useRef(null);
   const card2 = useRef(null);
-  // const card3 = useRef(null);
+  const card3 = useRef(null);
 
   useEffect(() => {
-    console.log('REF', card2.current); // Doit afficher le div DOM
-    gsap.fromTo(
-      card2.current,
-      { x: -100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: card2.current,
-          start: 'top 80%',
-          end: 'top 50%',
-          scrub: true,
-          markers: true,
+    // Animation carte 1 : Arrive du haut gauche avec rotation
+    console.log('CARDS', card1.current, card2.current, card3.current);
+
+    setTimeout(() => {
+      gsap.fromTo(
+        card1.current,
+        {
+          x: -100,
+          y: -100,
+          rotateX: 45,
+          rotateY: -20,
+          rotateZ: 20,
+          opacity: 0,
         },
-      }
-    );
+        {
+          x: 0,
+          y: 0,
+          rotateX: 0,
+          rotateY: 0,
+          rotateZ: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card1.current,
+            start: 'top 80%',
+            end: 'top 50%', // Ajuste le end pour gérer la "durée" du scroll d'animation
+            scrub: true, // <-- clé ici !
+          },
+        }
+      );
+
+      // Animation carte 2
+      gsap.fromTo(
+        card2.current,
+        {
+          x: 100,
+          y: -1000,
+          rotateX: 360,
+          rotateY: 360,
+          rotateZ: 360,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          y: 0,
+          rotateX: 0,
+          rotateY: 0,
+          rotateZ: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card2.current,
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: true,
+            markers: true,
+          },
+        }
+      );
+
+      // Animation carte 3
+      gsap.fromTo(
+        card3.current,
+        {
+          x: 80,
+          y: -130,
+          rotateX: -25,
+          rotateY: 45,
+          rotateZ: 40,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          y: 0,
+          rotateX: 0,
+          rotateY: 0,
+          rotateZ: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card3.current,
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: true,
+          },
+        }
+      );
+      ScrollTrigger.refresh();
+    }, 1500); // augmente si besoin à 1500ms pour test
   }, []);
 
   return (
     <div className='skils-container'>
-      {/* <div ref={card1}>
+      <div ref={card1}>
         <StackCard
           icon={computer}
           title='What I can do'
@@ -48,7 +123,7 @@ const Skills = () => {
             { title: 'API Integration' },
           ]}
         />
-      </div> */}
+      </div>
       <div ref={card2}>
         <StackCard
           icon={stack}
@@ -64,7 +139,7 @@ const Skills = () => {
           ]}
         />
       </div>
-      {/* <div ref={card3}>
+      <div ref={card3}>
         <StackCard
           icon={paint}
           title='UI/UX Design '
@@ -75,7 +150,7 @@ const Skills = () => {
             { title: 'Responsive Layouts' },
           ]}
         />
-      </div> */}
+      </div>
     </div>
   );
 };
