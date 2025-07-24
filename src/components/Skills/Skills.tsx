@@ -101,15 +101,8 @@ const Skills = () => {
         },
       }
     );
-    // Ajout explicite
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 300); // ou 0 si juste pour forcer, 300ms si images
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   }, []);
+
   return (
     <div className='skils-container'>
       <div ref={card1}>
