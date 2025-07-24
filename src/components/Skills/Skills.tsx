@@ -46,7 +46,9 @@ const Skills = () => {
     );
     const fromY = card2.current
       ? -window.innerHeight + card2.current.getBoundingClientRect().height / 2
-      : -150;
+      : -440;
+
+    console.log('fromY: ' + fromY);
 
     // Animation carte 2
     gsap.fromTo(
