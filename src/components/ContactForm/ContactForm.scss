@@ -69,6 +69,23 @@
     textarea,
     .text-area {
       resize: none;
+      /* Firefox */
+      scrollbar-width: thin;
+      scrollbar-color: #23242a #15151a;
+    }
+
+    /* Chrome, Edge, etc. */
+    .text-area::-webkit-scrollbar {
+      width: 6px;
+      background: transparent;
+    }
+    .text-area::-webkit-scrollbar-thumb {
+      background: #23242a;
+      border-radius: 6px;
+      border: 1px solid #181820;
+    }
+    .text-area::-webkit-scrollbar-track {
+      background: #15151a;
     }
   }
 
