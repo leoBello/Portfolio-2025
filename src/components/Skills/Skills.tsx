@@ -16,92 +16,95 @@ const Skills = () => {
 
   useEffect(() => {
     // Animation carte 1 : Arrive du haut gauche avec rotation
-    gsap.fromTo(
-      card1.current,
-      {
-        x: -100,
-        y: -100,
-        rotateX: 45,
-        rotateY: -20,
-        rotateZ: 20,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        y: 0,
-        rotateX: 0,
-        rotateY: 0,
-        rotateZ: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: card1.current,
-          start: 'top 80%',
-          end: 'top 50%', // Ajuste le end pour gérer la "durée" du scroll d'animation
-          scrub: true, // <-- clé ici !
+    setTimeout(() => {
+      gsap.fromTo(
+        card1.current,
+        {
+          x: -100,
+          y: -100,
+          rotateX: 45,
+          rotateY: -20,
+          rotateZ: 20,
+          opacity: 0,
         },
-      }
-    );
+        {
+          x: 0,
+          y: 0,
+          rotateX: 0,
+          rotateY: 0,
+          rotateZ: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card1.current,
+            start: 'top 80%',
+            end: 'top 50%', // Ajuste le end pour gérer la "durée" du scroll d'animation
+            scrub: true, // <-- clé ici !
+          },
+        }
+      );
 
-    // Animation carte 2
-    gsap.fromTo(
-      card2.current,
-      {
-        x: 100,
-        y: -1000,
-        rotateX: 360,
-        rotateY: 360,
-        rotateZ: 360,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        y: 0,
-        rotateX: 0,
-        rotateY: 0,
-        rotateZ: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: card2.current,
-          start: 'top 80%',
-          end: 'top 50%',
-          scrub: true,
-          markers: true,
+      // Animation carte 2
+      gsap.fromTo(
+        card2.current,
+        {
+          x: 100,
+          y: -1000,
+          rotateX: 360,
+          rotateY: 360,
+          rotateZ: 360,
+          opacity: 0,
         },
-      }
-    );
+        {
+          x: 0,
+          y: 0,
+          rotateX: 0,
+          rotateY: 0,
+          rotateZ: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card2.current,
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: true,
+            markers: true,
+          },
+        }
+      );
 
-    // Animation carte 3
-    gsap.fromTo(
-      card3.current,
-      {
-        x: 80,
-        y: -130,
-        rotateX: -25,
-        rotateY: 45,
-        rotateZ: 40,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        y: 0,
-        rotateX: 0,
-        rotateY: 0,
-        rotateZ: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: card3.current,
-          start: 'top 80%',
-          end: 'top 50%',
-          scrub: true,
+      // Animation carte 3
+      gsap.fromTo(
+        card3.current,
+        {
+          x: 80,
+          y: -130,
+          rotateX: -25,
+          rotateY: 45,
+          rotateZ: 40,
+          opacity: 0,
         },
-      }
-    );
+        {
+          x: 0,
+          y: 0,
+          rotateX: 0,
+          rotateY: 0,
+          rotateZ: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card3.current,
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: true,
+          },
+        }
+      );
+      ScrollTrigger.refresh();
+    }, 1500); // augmente si besoin à 1500ms pour test
   }, []);
 
   return (
