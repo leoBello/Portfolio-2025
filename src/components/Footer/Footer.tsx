@@ -58,7 +58,6 @@ const Footer = () => {
           trigger: endRef.current,
           start: 'top bottom', // quand le bas du contenu principal touche le bas du viewport
           toggleActions: 'play none none reverse',
-          invalidateOnRefresh: true, // recalcule les position à chaque refresh
         },
       }
     );
