@@ -38,6 +38,13 @@ const Footer = () => {
 
   useEffect(() => {
     if (!endRef.current || !footer.current) return;
+    const refresh = () => ScrollTrigger.refresh();
+
+    window.addEventListener('resize', refresh);
+    window.addEventListener('orientationchange', refresh);
+
+    // Certains navigateurs mobiles lèvent 'scroll' sur le window lors de l’apparition barre URL
+    window.addEventListener('scroll', refresh);
     gsap.fromTo(
       footer.current,
       { y: 100, opacity: 0 },
@@ -54,6 +61,12 @@ const Footer = () => {
         },
       }
     );
+    // Clean up
+    return () => {
+      window.removeEventListener('resize', refresh);
+      window.removeEventListener('orientationchange', refresh);
+      window.removeEventListener('scroll', refresh);
+    };
   }, []);
   return (
     <>
