@@ -6,6 +6,7 @@ import linkedIcon from '../../assets/linkedin.png';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { isMobile } from 'react-device-detect';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +38,7 @@ const Footer = () => {
   const endRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!endRef.current || !footer.current) return;
+    if (!endRef.current || !footer.current || isMobile) return;
     gsap.fromTo(
       footer.current,
       { y: 100, opacity: 0 },
