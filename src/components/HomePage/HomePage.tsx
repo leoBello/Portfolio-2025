@@ -8,7 +8,7 @@ import { isDesktop } from 'react-device-detect';
 import ContactContainer from '../ContactContainer/ContactContainer';
 
 const HomePage = () => {
-  const [gravity, setGravity] = useState(-25);
+  const [gravity, setGravity] = useState(-30);
   return (
     <div className='home-page-container'>
       <WaveGrid gravity={gravity} />
