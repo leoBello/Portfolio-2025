@@ -59,7 +59,11 @@ const Footer = () => {
   return (
     <>
       <div ref={endRef} />
-      <div ref={footer} className='footer-container'>
+      <div
+        ref={footer}
+        style={{ position: isMobile ? 'absolute' : 'fixed' }}
+        className='footer-container'
+      >
         <p>{`2025 - Léo Bello, All rights reserved`}</p>
         <div className='button-container'>
           <IconButton
