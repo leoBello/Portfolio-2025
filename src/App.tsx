@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Toaster
         toastOptions={{
           style: {
@@ -20,7 +20,7 @@ function App() {
         position='top-center'
       />
       <HomePage />
-    </>
+    </div>
   );
 }
 

@@ -17,7 +17,7 @@ const HomePage = () => {
           value={gravity}
           min={-75}
           max={75}
-          onChange={(value) => setGravity(value)}
+          onChange={(value: any) => setGravity(value)}
           label='Gravity'
           className='gravity-slider'
           withBackground

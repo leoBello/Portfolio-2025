@@ -4,7 +4,7 @@ import phoneIcon from '../../assets/phone.png';
 import emailIcon from '../../assets/email.png';
 import locationIcon from '../../assets/location_om1.png';
 import './ContactContainer.scss';
-import ClipboardCopy from '../CopyTextToClipboard/CopyTextToClipboard';
+import ClipboardCopy from '../CopyTextToClipboard/ClipboardCopy';
 
 const ContactContainer = () => {
   return (

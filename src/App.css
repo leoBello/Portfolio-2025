@@ -6,3 +6,10 @@
 /* .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 } */
+
+.App {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  width: 100%;
+}
